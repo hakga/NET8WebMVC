@@ -3,6 +3,10 @@
   "defaultProvider": "cdnjs",
   "libraries": [
     {
+      "library": "knockout@3.5.1",
+      "destination": "wwwroot/lib/knockout/"
+     },
+    {
       "library": "bootstrap@5.3.1",
       "destination": "wwwroot/lib/bootstrap/"
     }
