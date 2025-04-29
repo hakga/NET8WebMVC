@@ -9,11 +9,13 @@ namespace NET8WebMVC.Controllers {
         private readonly SampleDbContext _context;
         private readonly ILogger<HomeController> _logger;
         private readonly ILoaderMembers _loaderMembers;
+        private readonly IConfiguration _config;
 
-        public HomeController(ILogger<HomeController> logger, SampleDbContext context, ILoaderMembers loaderMembers) {
+        public HomeController(ILogger<HomeController> logger, SampleDbContext context, ILoaderMembers loaderMembers, IConfiguration config) {
             _logger = logger;
             _context = context;
             _loaderMembers = loaderMembers;
+            _config = config;
         }
 
         public IActionResult Index() {
@@ -21,6 +23,7 @@ namespace NET8WebMVC.Controllers {
         }
 
         public IActionResult Privacy() {
+            ViewBag.MySetting = _config["MySetting"];
             return View();
         }
 
